@@ -1,0 +1,23 @@
+@import '../../../scss/settings/_settings.color.scss';
+@import './custom.scss';
+
+.c-button {
+    margin: 10px 0 0 0;
+    cursor: pointer;
+
+    &+& {
+        margin-left: 15px;
+    }
+}
+
+.c-button--primary {
+    background-color: $color-primary-light;
+    color: $color-white;
+    border: 1px solid $color-primary-light;
+}
+
+.c-button--secondary {
+    background-color: $color-secondary-light;
+    color: $color-white;
+    border: 1px solid $color-secondary-light;
+}

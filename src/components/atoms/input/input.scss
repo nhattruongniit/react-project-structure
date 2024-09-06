@@ -1,0 +1,16 @@
+@import '../../../scss/settings/_settings.color.scss';
+
+.c-input {
+    color: rgb(17 24 39 / 1);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding-inline-start: 2.5rem;
+    padding: .5rem;
+    padding-left: 2.5rem;
+    background-color: rgb(249 250 251 / 1);
+    border-color: rgb(209 213 219 / 1);
+    border-width: 1px;
+    border-radius: .5rem;
+    width: 100%;
+    display: block;
+}
