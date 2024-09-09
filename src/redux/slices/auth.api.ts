@@ -1,4 +1,3 @@
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 /**
@@ -6,9 +5,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
  * @param {Object} splConfig - isPublic, authSettingType
  */
 export const fetchAuthSettings = createAsyncThunk('auth-settings-slice/fetchAuthSettings', async () => {
-    try {
-        return { response: {} };
-    } catch (err) {
-        console.error(err);
-    }
+  try {
+    return { response: {} };
+  } catch (err) {
+    console.error(err);
+  }
 });

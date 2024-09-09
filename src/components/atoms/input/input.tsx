@@ -1,13 +1,13 @@
-import React, { InputHTMLAttributes } from 'react'
+import React, { InputHTMLAttributes } from 'react';
 
-import './input.scss'
+import './input.scss';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    className?: string
-    type?: string
-    placeholder?: string
-    value?: string
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  className?: string;
+  type?: string;
+  placeholder?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 function Input({ className, type, placeholder, value, onChange, ...props }: InputProps) {
@@ -20,7 +20,7 @@ function Input({ className, type, placeholder, value, onChange, ...props }: Inpu
       onChange={onChange}
       {...props}
     />
-  )
+  );
 }
 
-export default Input
+export default Input;

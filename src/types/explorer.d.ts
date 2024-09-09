@@ -1,5 +1,5 @@
-import { Node, Edge } from "reactflow";
-import { MessageMethods } from "antd/lib/message";
+import { Node, Edge } from 'reactflow';
+import { MessageMethods } from 'antd/lib/message';
 
 export type IMultiStepQueryContextType = {
   // states
@@ -80,7 +80,7 @@ export type IEdges = {
   animated: boolean;
 };
 
-export type TYPE_MODAL = "create" | "view";
+export type TYPE_MODAL = 'create' | 'view';
 
 export type IMultiStepModal = {
   isOpen: boolean;

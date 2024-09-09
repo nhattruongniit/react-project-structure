@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export function useClickOutside(cb: any) {
   const ref = React.useRef<any>(null);
@@ -16,12 +16,12 @@ export function useClickOutside(cb: any) {
       }
     };
 
-    document.addEventListener("mouseup", handler);
-    document.addEventListener("touchstart", handler);
+    document.addEventListener('mouseup', handler);
+    document.addEventListener('touchstart', handler);
 
     return () => {
-      document.removeEventListener("mouseup", handler);
-      document.removeEventListener("touchstart", handler);
+      document.removeEventListener('mouseup', handler);
+      document.removeEventListener('touchstart', handler);
     };
   }, []);
 

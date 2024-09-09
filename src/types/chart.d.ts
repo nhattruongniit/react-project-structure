@@ -1,9 +1,9 @@
-import { IQueryExplore } from "./query-builder";
+import { IQueryExplore } from './query-builder';
 
 export enum ChartType {
-  Line = "line",
-  Bar = "bar",
-  Table = "table",
+  Line = 'line',
+  Bar = 'bar',
+  Table = 'table',
 }
 
 export type IOrderQuery = {
@@ -26,7 +26,7 @@ export type IPivot = {
 export type IChart = {
   id: number;
   name: string;
-  action?: "add" | "edit" | "delete";
+  action?: 'add' | 'edit' | 'delete';
   vizState: {
     query: IQueryExplore;
     chartType: string;

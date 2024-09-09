@@ -1,55 +1,56 @@
-# React + TypeScript + Vite
+### Pattern design
+- [atomic design](https://atomicdesign.bradfrost.com/chapter-2/)
+- [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Convention code
 
-Currently, two official plugins are available:
+## Component's file name should be in Pascal Case.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Component names should be like ProductCard and not like productCard, product-card, etc. This way when we see a filename in Pascal Case, it is immediately clear that the file is a react component.
 
-## Pattern
-- ITCSS
-- Atomic design
-- hooks pattern
+## Component having own folders should have a component file with the same name.
 
-## Expanding the ESLint configuration
+This way when we search for files, we don't get a list of <b>index.ts</b> but will receive the actual component files.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Create an index.ts file in that component folder which export the named component.
+```
+import Product from './Product';
+export default Product;
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+or
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```
+export { default } from './Product';
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Components which can be used in other project or reuse.
+
+Components can be keep in `components/` folder (atom, molecules...). You can refer design system of Atomic Design.
+
+https://bradfrost.com/blog/post/atomic-web-design/
+
+## Hooks
+
+When we want to share logic between two javascript functions, we will extract it to a third function. Both components and hooks are functions, so this work for them too.
+
+A custom Hook is a javascript function whose name starts with `"use"` and that may call other hook. For example, `use-translation` below is a custom hook:
+
+```bash
+# use-translation.tsx
+import { useTranslation } from 'react-i18next';
+const useTranslate = () => {
+  const { t: translate, i18n } = useTranslation();
+  return { translate, i18n };
+};
+export default useTranslate;
+```
+
+## Utils
+
+Share an function logic for our app. It name should be in lowercase. For example, `sleep` below is a function.
+
+```bash
+# sleep.ts
+export const sleep = time => new Promise(res => setTimeout(res, time));
 ```

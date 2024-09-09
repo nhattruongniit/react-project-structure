@@ -77,7 +77,6 @@ export type IJoinType = {
   description: string;
 };
 
-
 export type IBlendData = {
   [alias as string]: IFormBlender;
-}
+};

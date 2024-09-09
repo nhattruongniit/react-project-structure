@@ -1,7 +1,5 @@
 function Slots() {
-  return (
-    <div>Slots</div>
-  )
+  return <div>Slots</div>;
 }
 
-export default Slots
+export default Slots;

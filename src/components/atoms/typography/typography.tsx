@@ -13,4 +13,4 @@ const Typography: React.FC<TypographyProps> = ({ variant, children, className = 
   return <Component className={`typography ${variant} ${className}`}>{children}</Component>;
 };
 
-export default Typography
+export default Typography;

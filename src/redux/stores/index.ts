@@ -1,7 +1,7 @@
-import rootReducer from "./root-reducers";
+import rootReducer from './root-reducers';
 
 const store = configureStore({
-    reducer: rootReducer,
+  reducer: rootReducer,
 });
 
 export default store;

@@ -1,4 +1,4 @@
-import React, { createContext, PropsWithChildren, useContext } from "react";
+import React, { createContext, PropsWithChildren, useContext } from 'react';
 
 type AppContextType = {
   defaultQuery: unknown;
@@ -7,7 +7,6 @@ type AppContextType = {
 export const AppContext = createContext<AppContextType>({} as AppContextType);
 
 export const AppContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
-
   return (
     <AppContext.Provider
       value={{

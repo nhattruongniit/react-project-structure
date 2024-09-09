@@ -1,18 +1,18 @@
-import { Link, useNavigate } from "react-router-dom";
-import clsx from "clsx";
-import React from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import clsx from 'clsx';
+import React from 'react';
 // refine
-import { CanAccess, ITreeMenu, pickNotDeprecated, useMenu } from "@refinedev/core";
+import { CanAccess, ITreeMenu, pickNotDeprecated, useMenu } from '@refinedev/core';
 
 // antd core
-import { Layout, Menu, Divider, Tag, Button, theme } from "antd";
-import SubMenu from "antd/es/menu/SubMenu";
+import { Layout, Menu, Divider, Tag, Button, theme } from 'antd';
+import SubMenu from 'antd/es/menu/SubMenu';
 
 // antd icons
-import { LeftOutlined, RightOutlined, UnorderedListOutlined } from "@ant-design/icons";
+import { LeftOutlined, RightOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
 // assets
-import ReactIcon from "@src/assets/images/react-icon.png";
+import ReactIcon from '@src/assets/images/react-icon.png';
 
 const { Sider } = Layout;
 
@@ -60,7 +60,7 @@ function SideBar({ collapsed, setCollapsed }: IProps) {
           }}
         >
           <Menu.Item key={item.key} icon={meta?.icon ?? (isRoute && <UnorderedListOutlined />)}>
-            <Link to={route ?? ""} className="flex items-center">
+            <Link to={route ?? ''} className="flex items-center">
               {name}
               {meta?.tags?.map((t: any, index: number) => {
                 return (
@@ -78,7 +78,7 @@ function SideBar({ collapsed, setCollapsed }: IProps) {
   };
 
   const items = renderTreeView(menuItems, selectedKey);
-  const isActiveMenuExperiment = selectedKey.includes("studio") || selectedKey.includes("experiment");
+  const isActiveMenuExperiment = selectedKey.includes('studio') || selectedKey.includes('experiment');
 
   return (
     <Sider
@@ -86,7 +86,7 @@ function SideBar({ collapsed, setCollapsed }: IProps) {
       collapsible
       collapsed={collapsed}
       className={clsx(
-        "max-w-[240px] h-[100vh] fixed top-0 left-0 bottom-0 border-0 border-r-[1px] border-solid border-[#E0E0E0] dark:border-[#2b2b2b] z-[999]",
+        'max-w-[240px] h-[100vh] fixed top-0 left-0 bottom-0 border-0 border-r-[1px] border-solid border-[#E0E0E0] dark:border-[#2b2b2b] z-[999]',
         !collapsed && `w-[240px]`,
       )}
       style={{
@@ -96,7 +96,7 @@ function SideBar({ collapsed, setCollapsed }: IProps) {
       <div
         className="flex items-center justify-center h-[64px] cursor-pointer"
         onClick={() => {
-          navigate("/");
+          navigate('/');
         }}
       >
         <img src={ReactIcon} alt="React" className="w-[35px]" />
@@ -104,12 +104,12 @@ function SideBar({ collapsed, setCollapsed }: IProps) {
       </div>
       <Divider className="m-0 dark:border-[#1d1d1d]" />
       <Menu
-        selectedKeys={isActiveMenuExperiment ? ["/Experiment ticket"] : [selectedKey]}
+        selectedKeys={isActiveMenuExperiment ? ['/Experiment ticket'] : [selectedKey]}
         defaultOpenKeys={defaultOpenKeys}
         mode="inline"
         style={{
-          marginTop: "8px",
-          border: "none",
+          marginTop: '8px',
+          border: 'none',
         }}
         className="border-0 h-[calc(100vh-80px)] overflow-auto"
       >
